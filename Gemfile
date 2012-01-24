@@ -5,6 +5,7 @@ gem 'rake'
 gemspec
 
 group :test do
+  gem "nokogiri"
   gem "rspec", ">2"
   gem "rack-test", :require => "rack/test"
 end
