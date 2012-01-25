@@ -19,7 +19,7 @@ module Rack
           parsed_body = Nokogiri::HTML.parse(b)
           container = parsed_body.at("[@data-pjax-container]")
           if container
-            title = parsed_body.at('title')
+            title = parsed_body.at("title")
             new_body << title.to_s if title
             new_body << container.children.to_xhtml
           else
