@@ -1,5 +1,4 @@
 require 'nokogiri'
-require 'open-uri'
 
 module Rack
   class Pjax
@@ -21,7 +20,7 @@ module Rack
           if container
             title = parsed_body.at("title")
             new_body << title.to_s if title
-            new_body << container.children.to_xhtml
+            new_body << container.inner_html
           else
             new_body << b
           end
